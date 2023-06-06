@@ -3,7 +3,7 @@
         <div class="budget">
             <div class="budget__title">
                 Available Budget on <span class="budget__title--month">{{getMonth()}}</span>
-                <span> powered by ttv </span>
+                <span> powered by ttv webapp</span>
             </div>
 
             <div class="budget__value"> {{balance}}</div>
