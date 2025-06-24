@@ -1,24 +1,49 @@
 # counter-app
 
 ## Project setup
-```
+```bash
 yarn install
 ```
 
 ### Compiles and hot-reloads for development
-```
+```bash
 yarn serve
 ```
 
 ### Compiles and minifies for production
-```
+```bash
 yarn build
 ```
 
 ### Lints and fixes files
-```
+```bash
 yarn lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Server
+A lightweight Express server was added under the `server` directory to handle user authentication. It connects to a MongoDB database (MongoDB Atlas can be used as a cloud option) and provides register and login endpoints.
+The server has CORS enabled so the Vue frontend can communicate with it from a different port.
+
+To run the server:
+```bash
+cd server
+cp .env.example .env # edit variables
+npm install           # install server dependencies
+npm start
+```
+
+Example `.env` content (used for testing):
+
+```
+MONGO_URI=mongodb+srv://admin:HglKnC5lDlbLBy0J@tor1.ocux4fb.mongodb.net/?retryWrites=true&w=majority&appName=tor1
+JWT_SECRET=your_jwt_secret
+PORT=3000
+```
+
+### Frontend configuration
+Create a `.env` file in the project root to define the backend URL. By default it
+uses `http://localhost:3000`:
+
+```
+VUE_APP_BACKEND_URL=http://localhost:3000
+```
