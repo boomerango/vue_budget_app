@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import evalInput  from "./model/evalInput";
+import auth from './model/auth'
 import createPersistedState from "vuex-persistedstate";
 
 Vue.use(Vuex);
@@ -50,9 +51,10 @@ export default new Vuex.Store({
     }
   },
   modules:{
-    evalInput
+    evalInput,
+    auth
   },
   plugins: [createPersistedState({
-    paths:['totalIncObject','totalExpObject']
+    paths:['totalIncObject','totalExpObject','auth.token']
   })]
 })

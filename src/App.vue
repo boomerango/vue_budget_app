@@ -2,7 +2,12 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/about">About</router-link> |
+      <router-link v-if="!isAuth" to="/login">Login</router-link> |
+      <router-link v-if="!isAuth" to="/register">Register</router-link>
+      <span v-if="isAuth">
+        <a href="#" @click.prevent="logout">Logout</a>
+      </span>
     </div>
     <router-view/>
   </div>
@@ -30,3 +35,18 @@
   color: #42b983;
 }
 </style>
+<script>
+export default {
+  computed: {
+    isAuth() {
+      return this.$store.getters['isAuthenticated']
+    }
+  },
+  methods: {
+    logout() {
+      this.$store.commit('clearToken')
+      this.$router.push('/login')
+    }
+  }
+}
+</script>
