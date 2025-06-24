@@ -22,6 +22,7 @@ yarn lint
 
 ### Server
 A lightweight Express server was added under the `server` directory to handle user authentication. It connects to a MongoDB database (MongoDB Atlas can be used as a cloud option) and provides register and login endpoints.
+The server has CORS enabled so the Vue frontend can communicate with it from a different port.
 
 To run the server:
 ```bash
