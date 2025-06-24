@@ -30,3 +30,11 @@ cp .env.example .env # edit variables
 npm install           # install server dependencies
 npm start
 ```
+
+Example `.env` content (used for testing):
+
+```
+MONGO_URI=mongodb+srv://admin:HglKnC5lDlbLBy0J@tor1.ocux4fb.mongodb.net/?retryWrites=true&w=majority&appName=tor1
+JWT_SECRET=your_jwt_secret
+PORT=3000
+```
