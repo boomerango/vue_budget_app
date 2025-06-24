@@ -38,3 +38,11 @@ MONGO_URI=mongodb+srv://admin:HglKnC5lDlbLBy0J@tor1.ocux4fb.mongodb.net/?retryWr
 JWT_SECRET=your_jwt_secret
 PORT=3000
 ```
+
+### Frontend configuration
+Create a `.env` file in the project root to define the backend URL. By default it
+uses `http://localhost:3000`:
+
+```
+VUE_APP_BACKEND_URL=http://localhost:3000
+```

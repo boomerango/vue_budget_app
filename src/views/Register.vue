@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import { BACKEND_URL } from '../config'
 export default {
   data() {
     return {
@@ -25,7 +26,7 @@ export default {
   },
   methods: {
     async submit() {
-      await fetch('/api/register', {
+      await fetch(`${BACKEND_URL}/api/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username: this.username, password: this.password })
